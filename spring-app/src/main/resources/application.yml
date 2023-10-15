@@ -1,0 +1,27 @@
+# Spring -----------------------------
+server.port: ${API_PORT:9000}
+
+# App --------------------------------
+app:
+  name: spring-app
+  source: api
+
+# Health Check -----------------------
+management:
+  endpoint:
+    health:
+      show-details: "ALWAYS"
+
+# Kafka ------------------------------
+spring:
+  kafka:
+    consumer:
+      bootstrap-servers: ${KAFKA_URL:localhost:9092}
+      group-id: spring-app
+      auto-offset-reset: earliest
+      properties.spring.json.trusted.packages: "*"
+
+    producer:
+      bootstrap-servers: ${KAFKA_URL:localhost:9092}
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
