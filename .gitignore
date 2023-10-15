@@ -1,0 +1,7 @@
+# Generated Stuff
+.venv
+.DS_Store
+
+# IDEs
+.vscode
+.idea
