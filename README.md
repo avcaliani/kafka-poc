@@ -1,4 +1,4 @@
-# ✉️ Kafka App
+# ✉️ Kafka PoC
 
 By Anthony Vilarim Caliani
 
